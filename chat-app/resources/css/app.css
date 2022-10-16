@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: cornflowerblue;
+    background-color: #EEE;
 }
 
 input.button {
@@ -31,14 +31,15 @@ input {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    background-color: #8C38FF;
 }
 
 header {
     display: flex;
     padding-top: 128px;
     padding-bottom: 32px;
-    background-color: deepskyblue;
-    background-image: linear-gradient(to bottom, cornflowerblue, deepskyblue);
+    background-color: #8C38FF;
+    background-image: linear-gradient(to bottom, #8C38FF, #6317ce);
     align-items: center;
     justify-content: flex-end;
     flex-direction: column;
@@ -82,7 +83,7 @@ h1 {
 }
 
 .message strong {
-    color: cornflowerblue;
+    color: #8C38FF;
     font-weight: 600;
 }
 
@@ -97,7 +98,7 @@ h1 {
 #message_send {
     float: right;
     appearance: none;
-    background-color: cornflowerblue;
+    background-color: #8C38FF;
     padding: 4px 8px;
     color: #FFF;
     text-transform: uppercase;

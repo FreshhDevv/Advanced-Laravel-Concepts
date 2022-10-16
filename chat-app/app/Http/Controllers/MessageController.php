@@ -13,5 +13,7 @@ class MessageController extends Controller
             $request->input('username'),
             $request->input('message'),
         ));
+
+        return ['success'];
     }
 }

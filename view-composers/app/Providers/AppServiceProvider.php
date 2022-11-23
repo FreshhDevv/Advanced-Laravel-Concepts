@@ -35,6 +35,6 @@ class AppServiceProvider extends ServiceProvider
         // });
 
         // Option 3 - Dedicated Class
-        View::composer(['post.*', 'channel.index'], ChannelsComposer::class);
+        View::composer('partials.channels*', ChannelsComposer::class);
     }
 }

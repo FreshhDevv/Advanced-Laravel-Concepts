@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
+
+public function image() {
+    return $this->morphOne(Image::class, 'imageable')    ;
+}
 }

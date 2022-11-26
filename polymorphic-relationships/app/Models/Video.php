@@ -14,4 +14,9 @@ class Video extends Model
     {
         return $this->morphToMany(Comment::class, 'commentable');
     }
+
+    public function tags()
+    {
+        return $this->morphToMany(Tag::class, 'taggable');
+    }
 }

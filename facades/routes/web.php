@@ -1,5 +1,6 @@
 <?php
 
+use App\Postcard;
 use App\PostcardSendingService;
 use Illuminate\Support\Facades\Route;
 
@@ -23,5 +24,11 @@ Route::get('/postcards', function() {
     $postcardService = new PostcardSendingService('us', 4, 6);
 
     $postcardService->hello("Hello from Hans from Cameroon", 'hans@gmail.com');
+
+});
+
+Route::get('/facades', function() {
+    
+Postcard::any('abc', 123);
 
 });

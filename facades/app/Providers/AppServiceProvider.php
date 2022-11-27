@@ -24,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->app->singleton(PostcardSendingService::class, function($app) {
+        $this->app->singleton('Postcard', function($app) {
             return new PostcardSendingService('us', 4, 6);
         });
     }

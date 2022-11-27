@@ -26,7 +26,7 @@ class PostcardSendingService
         // $this->width
         // $this->height
 
-// dd('Postcard was sent with the message: '. $message)        ;
+// dd('Postcard was sent with the message: '. $message);
 dd('Postcard was sent with the message :'. $message);
     }
 }

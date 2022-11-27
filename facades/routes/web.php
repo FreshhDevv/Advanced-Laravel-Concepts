@@ -1,5 +1,6 @@
 <?php
 
+use App\PostcardSendingService;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,5 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/postcards', function() {
-    
+
+    $postcardService = new PostcardSendingService($country, $width, $height);
+
 });

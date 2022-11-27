@@ -20,6 +20,8 @@ Route::get('/', function () {
 
 Route::get('/postcards', function() {
 
-    $postcardService = new PostcardSendingService($country, $width, $height);
+    $postcardService = new PostcardSendingService('us', 4, 6);
+
+    $postcardService->hello("Hello from Hans from Cameroon", 'hans@gmail.com');
 
 });

@@ -10,7 +10,7 @@ class Postcard
     // Magic method __callStatic
     public static function __callStatic($method, $arguments)
     {
-    dd($arguments);
-    
-}
+        dd(app()['Postcard']);
+        dd($arguments);
+    }
 }

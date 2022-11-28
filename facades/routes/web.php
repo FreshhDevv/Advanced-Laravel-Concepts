@@ -29,6 +29,6 @@ Route::get('/postcards', function() {
 
 Route::get('/facades', function() {
     
-Postcard::any('abc', 123);
+Postcard::hello('Hello from Facade', '123@abc.com');
 
 });

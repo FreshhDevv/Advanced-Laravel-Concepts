@@ -5,12 +5,13 @@ namespace App;
 class Postcard
 {
 
-    // public static function any() {
-    // }
+   protected static function resolveFacade($name) {
+    return app()[$name];
+   }
     // Magic method __callStatic
     public static function __callStatic($method, $arguments)
     {
-        dd(app()['Postcard']);
-        dd($arguments);
+        return dd(self::resolveFacade('Postcard'))
+        ->$method(...$arguments);
     }
 }

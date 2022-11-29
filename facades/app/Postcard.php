@@ -11,7 +11,8 @@ class Postcard
     // Magic method __callStatic
     public static function __callStatic($method, $arguments)
     {
-        return dd(self::resolveFacade('Postcard'))
+        return (self::resolveFacade('Postcard'))
         ->$method(...$arguments);
+        
     }
 }

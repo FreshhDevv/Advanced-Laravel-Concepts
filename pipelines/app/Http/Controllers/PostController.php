@@ -9,7 +9,13 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::query();
+
+        if(request()->has('active')) {
+            $posts->where('active', request('active'));
+        }
+
+        $posts = $posts->get();
         return view('post.index', compact('posts'));
     }
 }

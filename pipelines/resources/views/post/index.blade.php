@@ -6,3 +6,5 @@
         </tr>
     @endforeach
 </table>
+
+{{ $posts->appends(request()->input())->links() }}

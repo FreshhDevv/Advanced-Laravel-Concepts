@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->string('name');
-            $table->timestamp('contacted_at')->nullable();
+            $table->dateTime('contacted_at')->date_timestamp_set;
             $table->unsignedSmallInteger('active')->index();
             $table->timestamps();
 

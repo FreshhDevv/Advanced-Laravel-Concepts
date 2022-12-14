@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/lazy', function() {
+    $collection = Collection::times(1000000)
+    ->map(function($number) {
+    return pow(2, $number)        ;
+    })->all();
+
+    return 'done!';
 });

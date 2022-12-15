@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\LazyCollection;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,11 +19,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/lazy', function() {
+Route::get('lazy', function() {
     $collection = Collection::times(1000000)
     ->map(function($number) {
     return pow(2, $number)        ;
     })->all();
+
+    return 'done!';
+});
+
+Route::get('lazy', function() {
+    $collection = LazyCollection::times(1000000)->map(function($number) {
+        return pow(2, $number);
+    })
+    ->all();
 
     return 'done!';
 });

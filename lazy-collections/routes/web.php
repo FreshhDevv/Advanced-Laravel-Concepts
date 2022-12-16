@@ -36,3 +36,10 @@ Route::get('lazy', function() {
 
     return 'done!';
 });
+
+Route::get('generator', function() {
+    function happyFunction($string) {
+yield $string;        
+    }
+return get_class(happyFunction('Super Happy'))    ;
+});

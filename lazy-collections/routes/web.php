@@ -38,8 +38,23 @@ Route::get('lazy', function() {
 });
 
 Route::get('generator', function() {
-    function happyFunction($string) {
-yield $string;        
+    function happyFunction() {
+        dump(1);
+        yield 'One';        
+        dump(2);
+        dump(3);
+        yield 'Two';        
+        dump(4);
+        dump(5);
+        yield 'Three';        
+        dump(6);
     }
-return get_class(happyFunction('Super Happy'))    ;
+$return = happyFunction()   ;
+dump($return->current() );
+$return->next();
+dump($return->current());
+$return->next();
+dump($return->current());
+$return->next();
+dump($return->current());
 });

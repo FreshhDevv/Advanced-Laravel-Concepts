@@ -49,12 +49,10 @@ Route::get('generator', function() {
         yield 'Three';        
         dump(6);
     }
-$return = happyFunction()   ;
-dump($return->current() );
-$return->next();
-dump($return->current());
-$return->next();
-dump($return->current());
-$return->next();
-dump($return->current());
+foreach(happyFunction() as $result) {
+    if($result == 'Two') {
+    return;        
+    }
+    dump($result);
+}
 });

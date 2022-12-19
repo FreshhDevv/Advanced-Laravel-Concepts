@@ -38,18 +38,14 @@ Route::get('lazy', function() {
 });
 
 Route::get('generator', function() {
-    function happyFunction() {
-        dump(1);
-        yield 'One';        
-        dump(2);
-        dump(3);
-        yield 'Two';        
-        dump(4);
-        dump(5);
-        yield 'Three';        
-        dump(6);
+    function happyFunction($strings) {
+      foreach($strings as $string) {
+        dump('start');
+        yield $string;
+        dump('end');
+      }
     }
-foreach(happyFunction() as $result) {
+foreach(happyFunction(['One', 'Two', 'Three']) as $result) {
     if($result == 'Two') {
     return;        
     }

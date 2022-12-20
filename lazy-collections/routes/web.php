@@ -38,17 +38,30 @@ Route::get('lazy', function() {
 });
 
 Route::get('generator', function() {
-    function happyFunction($strings) {
-      foreach($strings as $string) {
-        dump('start');
-        yield $string;
-        dump('end');
-      }
+
+    function notHappyFunction($number) {
+        $return = [];
+
+        for($i = 1; $i < $number; $i++) {
+            $return[] = $i;
+        }
+
+        return $return;
     }
-foreach(happyFunction(['One', 'Two', 'Three']) as $result) {
-    if($result == 'Two') {
-    return;        
+    function happyFunction($number) {
+
+        for($i = 1; $i < $number; $i++) {
+            yield $i;
+        }
+
     }
-    dump($result);
-}
+
+    foreach(happyFunction(10000000) as $number) {
+        if($number % 1000 == 0) {
+            dump('hello');
+        }
+    }
+
+
+
 });

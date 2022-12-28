@@ -77,7 +77,8 @@ class PostPolicy
      */
     public function restore(User $user, Post $post)
     {
-        //
+        //Example of something you could do
+        $user->isAdmin();
     }
 
     /**
